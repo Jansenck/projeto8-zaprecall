@@ -1,0 +1,101 @@
+body{
+    background-color: #FB6B6B;
+    font-family: 'Recursive', sans-serif;
+    color: #333333;
+}
+
+.container{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container.initial{
+    height: 40vh;
+    background-color: aqua;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 36px;
+    font-weight: 400;
+    font-family: 'Righteous';
+    color: #ffffff;
+}
+.initial img{
+    width: 136px;
+    height: 161px;
+}
+.initial button{
+    height: 8vh;
+    width: 70%;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border: 1px solid #D70900;
+    border-radius: 5px;
+    font-family: 'Recursive';
+    font-size: 18px;
+    font-weight: 400;
+    color:#D70900;
+}
+
+header{
+    height: 20vh;
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    align-items: center;
+}
+header>img{
+    width: 52px;
+    height: 60px;
+}
+
+.title{
+    font-family: 'Righteous', cursive;
+    font-weight: 400;
+    font-size: 36px;
+    color:#ffffff;
+}
+
+.deck{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 15vh;
+}
+
+.card{
+    height: 10vh;
+    width: 100%;
+    background-color: #ffffff;
+    margin-bottom: 2vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items:center;
+    border-radius: 5px;
+    box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
+}
+
+.card>img{
+    height: 20px;
+    width: 22px;
+}
+
+.progressBar{
+    height: 10vh;
+    width: 100%;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+}
