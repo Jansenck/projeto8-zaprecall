@@ -1,60 +1,33 @@
-import setinha from "../assets/img/setinha.png"
+import { useState } from "react";
+
+import arrow from "../assets/img/setinha.png"
 import play from "../assets/img/play.png"
 
-export default function Flashcards(){
+function card(action, index, flashcardsData, setFlashcardsData){
+    flashcardsData[index] = {...flashcardsData[index], showAnswer: true};
+    const updateCardsData = [...flashcardsData];
+    setFlashcardsData(updateCardsData);
+}
 
-    const flashcards = [
-        {
-            name: "pergunta 1",
-            question: "O que é JSX?",
-            answer: "Uma extensão de linguagem do JavaScript"
-        },
-        {
-            name: "pergunta 2",
-            question: "O React é __",
-            answer: "uma biblioteca JavaScript para construção de interfaces."
-        },
-        {
-            name: "pergunta 3",
-            question: "Componentes devem iniciar com __",
-            answer: " letra maiúscula"
-        },
-        {
-            name: "pergunta 4",
-            question: "Podemos colocar __ dentro do JSX",
-            answer: "expressões"
-        },
-        {
-            name: "pergunta 5",
-            question: " O ReactDOM nos ajuda __ ",
-            answer: " interagindo com a DOM para colocar componentes React na mesma"
-        },
-        {
-            name: "pergunta 6",
-            question: "Usamos o npm para __ ",
-            answer: "gerenciar os pacotes necessários e suas dependências"
-        },
-        {
-            name: "pergunta 7",
-            question: "Usamos props para __",
-            answer: "passar diferentes informações para componentes "
-        },
-        {
-            name: "pergunta 8",
-            question: "Usamos estado (state) para __ ",
-            answer: "dizer para o React quais informações quando atualizadas devem renderizar a tela novamente"
-        },
-    ];
+
+export default function Flashcards({flashcardsData, setFlashcardsData, setUserAnswers}){
 
     return(
         <div className="deck">
-            {flashcards.map((flashcard, index)=>{
+            {flashcardsData.map((flashcard, index)=>{
                 return(
                     <div className="card" key={index}>
-                        {flashcard.name}
-                        <img src={play} alt={play}/>
+
+                        {flashcard.showAnswer? flashcard.question : flashcard.name}
+
+                        {flashcard.showAnswer?
+
+                                <img src={arrow} alt={arrow} onClick={() => card('turn-on', index, flashcardsData, setFlashcardsData)}/>
+                            :
+                                <img src={play} alt={play} onClick={() => card('play', index, flashcardsData, setFlashcardsData)}/>
+                        }
                     </div>
-                )
+                );
             })}
         </div>
     );
