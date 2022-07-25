@@ -32,7 +32,7 @@ export default function Card(props){
 
     function Text(props){
 
-        const {index, flashcard, flashcardsData, userAnswers} = props;
+        const {index, flashcard, userAnswers} = props;
     
         return(
             
