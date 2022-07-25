@@ -92,16 +92,19 @@ header>img{
     width: 100%;
     justify-content: right;
 }
-
 .card>img{
     height: 20px;
     width: 22px;
+}
+.answered{
+    text-decoration-line: line-through;
 }
 
 .progressBar{
     height: 10vh;
     width: 100%;
     background-color: #ffffff;
+    box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.05);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -110,6 +113,10 @@ header>img{
     left: 0;
     bottom: 0;
     z-index: 1;
+}
+footer.expand{
+    height: 20vh;
+    margin-top: 15vh;
 }
 
 .buttons{
@@ -126,4 +133,33 @@ header>img{
     border-radius: 5px;
     color: #ffffff;
     font-family: 'Recursive';
+}
+
+.feedback{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.feedback .emoticon{
+    display: flex;
+    flex-direction: row;
+}
+.emoticon p{
+    font-weight: 700;
+}
+.feedback .questionsAnswered{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.feedback>ion-icons{
+    display: flex;
+    flex-direction: row;
+}
+
+ion-icon{
+    font-size: 25px;
 }
