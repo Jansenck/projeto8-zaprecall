@@ -23,10 +23,11 @@ export default function Card(props){
         const updateFlashCardsData = [...flashcardsData];
         setFlashcardsData(updateFlashCardsData);
     
-        const updateUserAnswers = {index, icon, color, feedbackAnswer};
+        userAnswers[index] = {index, icon, color, feedbackAnswer};
+
+        const updateUserAnswers = [...userAnswers];
         setUserAnswers([...userAnswers, updateUserAnswers]);
 
-        console.log(userAnswers);
     }
 
     function Text(props){
