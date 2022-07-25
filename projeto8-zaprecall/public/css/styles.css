@@ -165,3 +165,10 @@ footer.expand{
 ion-icon{
     font-size: 25px;
 }
+
+.turnOn{
+    height: 20%;
+    width: 100%;
+    display: flex;
+    justify-content: right;
+}

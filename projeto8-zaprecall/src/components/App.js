@@ -86,11 +86,15 @@ export default function App(){
 
     const [flashcardsData, setFlashcardsData] = useState(flashcards);
 
-    function Icons(){
-        return(userAnswers.map((icon, index)=> {
-            
+    function Icons({userAnswers}){
+        
+        return(userAnswers.map((answer, index)=> {
+
             return(
-                <ion-icon name={icon.icon} style={{color: icon.color}} ket={index}></ion-icon>
+                (answer)?
+                    <ion-icon name={answer.icon} style={{color: answer.color}} key={index}></ion-icon>
+                :
+                    ""
             );
         }))
     }
@@ -149,8 +153,8 @@ export default function App(){
                         }
                         <div className="questionsAnswered">
                             <p>{userAnswers.length}/{flashcards.length} CONCLUÍDOS</p>
-                            <div>
-                                <Icons/>
+                            <div >
+                                <Icons userAnswers={userAnswers}/>
                             </div>
                         </div>
                     </div>

@@ -19,14 +19,13 @@ export default function Card(props){
 
     function renderUserAnswer(index, icon, color, feedbackAnswer, userAnswers, setUserAnswers, flashcardsData, setFlashcardsData){
 
-        flashcardsData[index] = {...flashcardsData[index],showQuestion: false, showAnswer: false, answered: true};
+        flashcardsData[index] = {...flashcardsData[index], showQuestion: false, showAnswer: false, answered: true};
         const updateFlashCardsData = [...flashcardsData];
         setFlashcardsData(updateFlashCardsData);
     
         userAnswers[index] = {index, icon, color, feedbackAnswer};
-
         const updateUserAnswers = [...userAnswers];
-        setUserAnswers([...userAnswers, updateUserAnswers]);
+        setUserAnswers(updateUserAnswers);
 
     }
 
@@ -77,9 +76,14 @@ export default function Card(props){
     
         return(
             (flashcard.showQuestion)?
-                <img src={arrow} alt={arrow} onClick={() => card("show-answer",index, flashcardsData, setFlashcardsData)}/>
+                <div className="turnOn">
+                  <img src={arrow} alt={arrow} onClick={() => card("show-answer",index, flashcardsData, setFlashcardsData)}/>  
+                </div>
+                
             :
-                <img src={play} alt={play} onClick={() => card("show-question", index, flashcardsData, setFlashcardsData)}/>   
+                <div>
+                    <img src={play} alt={play} onClick={() => card("show-question", index, flashcardsData, setFlashcardsData)}/>
+                </div>
         );
     }
 
