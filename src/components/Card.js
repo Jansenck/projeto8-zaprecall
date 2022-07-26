@@ -27,19 +27,18 @@ export default function Card(props){
         userAnswers[index] = {index, icon, color, feedbackAnswer};
         const updateUserAnswers = [...userAnswers];
         setUserAnswers(updateUserAnswers);
-
     }
 
     function Text(props){
 
         const {index, flashcard, userAnswers} = props;
-    
+
         return(
             
             (flashcard.showQuestion)?
                     <Question flashcard={flashcard}/>
                 :
-                    <p className={`${userAnswers.answered? "answered" : ""}`} >Pergunta {index+1}</p>
+                    <p className={`${flashcard.answered? "answered" : ""}`} style={{color: `${flashcard.answered? userAnswers[index].color: ""}`}}>Pergunta {index+1}</p>
         );
     }
 
@@ -95,6 +94,7 @@ export default function Card(props){
             flashcard={flashcard}
             flashcardsData={flashcardsData}
             userAnswers={userAnswers}
+            id={userAnswers.index}
             />
             {
                 (flashcard.showAnswer)?

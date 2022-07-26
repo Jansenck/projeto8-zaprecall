@@ -121,7 +121,7 @@ export default function App(){
                     <img src={sad} alt={sad}/>
                     <p>Puts...</p>
                 </div>
-                <p>Ainda faltam alguns...<br/> Mas não desanime!</p>                                
+                <p >Ainda faltam alguns...<br/> Mas não desanime!</p>                                
             </>
         );
     }
@@ -152,7 +152,7 @@ export default function App(){
                                 <></>
                         }
                         <div className="questionsAnswered">
-                            <p>{userAnswers.length}/{flashcards.length} CONCLUÍDOS</p>
+                            <p>{userAnswers.filter(value => value !== undefined).length}/{flashcards.length} CONCLUÍDOS</p>
                             <div >
                                 <Icons userAnswers={userAnswers}/>
                             </div>
